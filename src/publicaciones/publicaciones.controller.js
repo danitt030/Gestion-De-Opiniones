@@ -74,6 +74,16 @@ export const editarPublicacion = async (req, res) => {
 export const eliminarPublicacion = async (req, res) => {
     try{
         const { id } = req.params
+        const {usuario} = req;
+        const user = await User.findById(usuario)
+    
+        const publicacion = await Publicaciones.findById(id)    
+        if(publicacion.autor._id.toString() !== user._id.toString()){
+            return res.status(401).json({
+                success: false,
+                message: "No tienes permisos para eliminar esta publicación"
+            })
+        }
         const publicacionEliminada = await Publicaciones.findByIdAndDelete(id)
         res.status(200).json({
             success: true,
@@ -84,8 +94,7 @@ export const eliminarPublicacion = async (req, res) => {
         res.status(500).json({
             success: false,
             message: "Error al eliminar la publicación",
-            error: err.message
-        })
+        }) 
     }
 };
 
