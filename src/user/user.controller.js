@@ -21,11 +21,7 @@ export const adminPorDefault = async () => {
                 role: "ADMIN_ROLE",
                 phone: "12345678",
             };
-
             await User.create(adminData);
-            console.log("El administrador fue creado por defecto");
-        } else {
-            console.log("El administrador por defecto ya existe");
         }
     } catch (errores) {
         console.error("Error al crear el administrador por defecto:", errores);

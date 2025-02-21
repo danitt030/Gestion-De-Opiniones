@@ -19,12 +19,7 @@ const PublicacionSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "User",
         required: [true, "El autor es obligatorio"]
-    }
-
-        ref: "Usuario",
-        required: [true, "El autor es obligatorio"]
     },
-
 }, {
     versionKey: false,
     timestamps: true
