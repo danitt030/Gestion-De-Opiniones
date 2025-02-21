@@ -6,8 +6,10 @@ import helmet from "helmet"
 import morgan from "morgan"
 import { dbConnection } from "./mongo.js"
 import { adminPorDefault } from "../src/user/user.controller.js"
+import { categoriaPorDefecto } from "../src/categoria/categoria.controller.js"
 import authRoutes from "../src/auth/auth.routes.js"
 import userRoutes from "../src/user/user.routes.js"
+import categoriaRoutes from "../src/categoria/categoria.routes.js"
 import apiLimiter from "../src/middlewares/rate-limit-validator.js"
 
 const middlewares = (app) => {
@@ -22,6 +24,7 @@ const middlewares = (app) => {
 const routes = (app) =>{
     app.use("/gestionDeOpiniones/v1/auth", authRoutes)
     app.use("/gestionDeOpiniones/v1/User", userRoutes)
+    app.use("/gestionDeOpiniones/v1/Categoria", categoriaRoutes)
 }
 
 const conectarDB = async () =>{
@@ -29,6 +32,8 @@ const conectarDB = async () =>{
         await dbConnection()
 
         await adminPorDefault()
+
+        await categoriaPorDefecto()
     }catch(err){
         console.log(`Database connection failed: ${err}`)
         process.exit(1)

@@ -1,4 +1,12 @@
 import User from "../user/user.model.js"
+import Categoria from "../categoria/categoria.model.js"
+
+export const categoriaExists = async (uid = "") => {
+    const existe = await Categoria.findOne({uid})
+    if(existe){
+        throw new Error(`La categoria ${uid} ya existe`)
+    }
+}
 
 export const emailExists = async (email = "") => {
     const existe = await User.findOne({email})
