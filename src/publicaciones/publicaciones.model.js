@@ -20,6 +20,11 @@ const PublicacionSchema = new Schema({
         ref: "User",
         required: [true, "El autor es obligatorio"]
     },
+    comentarios:[ {
+        type: Schema.Types.ObjectId,
+        ref: "comentario",
+    }],
+    
 }, {
     versionKey: false,
     timestamps: true

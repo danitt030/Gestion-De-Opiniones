@@ -1,6 +1,5 @@
 import Publicaciones from "./publicaciones.model.js"
 import User from "../user/user.model.js";  
-import Categoria from "../categoria/categoria.model.js"
 
 export const agregarPublicacion = async (req, res) => {
     try{
@@ -9,7 +8,7 @@ export const agregarPublicacion = async (req, res) => {
         const publicaciones = await Publicaciones.create(dato);
         res.status(201).json({
             message: "Publicación creada",
-            publicaciones
+            publicaciones,
         });
     }catch(err){
         res.status(500).json({
