@@ -99,3 +99,4 @@ export const categoriaPorDefecto = async () => {
         console.error("Error al crear la categoria por defecto:", err.message);
     }
 }
+
