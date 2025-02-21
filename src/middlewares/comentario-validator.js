@@ -6,7 +6,7 @@ import { hasRoles } from "./validate-roles.js";
 
 export const crearComentarioValidator = [
     validateJWT,
-    hasRoles("ADMIN_ROLE", "USER_ROLE"),
+    hasRoles("USER_ROLE"),
     body("texto").notEmpty().withMessage("El texto es obligatorio"),
     validarCampos,
     handleErrors
@@ -14,14 +14,16 @@ export const crearComentarioValidator = [
     
 export const editarComentarioValidator = [
     validateJWT,
-    hasRoles("ADMIN_ROLE", "USER_ROLE"),
+    hasRoles("USER_ROLE"),
+    body("texto").notEmpty().withMessage("El texto es obligatorio"),
     validarCampos,
     handleErrors
 ];
 
 export const eliminarComentarioValidator = [
     validateJWT,
-    hasRoles("ADMIN_ROLE", "USER_ROLE"),
+    hasRoles("USER_ROLE"),
+    param("id").isMongoId().withMessage("El ID de MongoDB no es valido"),
     validarCampos,
     handleErrors
 ];  
