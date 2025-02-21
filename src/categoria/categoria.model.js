@@ -13,6 +13,8 @@ const categoriaSchema = new Schema({
         type: Boolean,
         default: true
     },
-})
-
+}, {
+    versionKey: false,
+    timestamps: true
+});
 export default model("Categoria", categoriaSchema)

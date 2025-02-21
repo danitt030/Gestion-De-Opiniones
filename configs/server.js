@@ -9,6 +9,7 @@ import { adminPorDefault } from "../src/user/user.controller.js"
 import { categoriaPorDefecto } from "../src/categoria/categoria.controller.js"
 import authRoutes from "../src/auth/auth.routes.js"
 import userRoutes from "../src/user/user.routes.js"
+import publicacionesRoutes from "../src/publicaciones/publicaciones.routes.js"
 import categoriaRoutes from "../src/categoria/categoria.routes.js"
 import apiLimiter from "../src/middlewares/rate-limit-validator.js"
 
@@ -25,6 +26,7 @@ const routes = (app) =>{
     app.use("/gestionDeOpiniones/v1/auth", authRoutes)
     app.use("/gestionDeOpiniones/v1/User", userRoutes)
     app.use("/gestionDeOpiniones/v1/Categoria", categoriaRoutes)
+    app.use("/gestionDeOpiniones/v1/Publicacion", publicacionesRoutes)
 }
 
 const conectarDB = async () =>{
