@@ -11,6 +11,7 @@ import authRoutes from "../src/auth/auth.routes.js"
 import userRoutes from "../src/user/user.routes.js"
 import publicacionesRoutes from "../src/publicaciones/publicaciones.routes.js"
 import categoriaRoutes from "../src/categoria/categoria.routes.js"
+import comentarioRoutes from "../src/comentario/comentario.routes.js"
 import apiLimiter from "../src/middlewares/rate-limit-validator.js"
 
 const middlewares = (app) => {
@@ -27,6 +28,7 @@ const routes = (app) =>{
     app.use("/gestionDeOpiniones/v1/User", userRoutes)
     app.use("/gestionDeOpiniones/v1/Categoria", categoriaRoutes)
     app.use("/gestionDeOpiniones/v1/Publicacion", publicacionesRoutes)
+    app.use("/gestionDeOpiniones/v1/Comentario", comentarioRoutes)
 }
 
 const conectarDB = async () =>{

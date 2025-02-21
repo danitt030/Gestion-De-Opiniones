@@ -38,3 +38,4 @@ export const publicacionesExists = async (uid = " ") => {
         throw new Error("No se encuentra la publicacion por medio del ID")
     }
 }
+

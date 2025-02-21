@@ -3,7 +3,6 @@ import { Schema, model } from "mongoose";
 const ComentarioSchema = new Schema({
     texto: {
         type: String,
-        required: [true, "El texto es obligatorio"],
         maxLength: [250, "El texto no debe exceder los 250 caracteres"]
     },
     autor: {
