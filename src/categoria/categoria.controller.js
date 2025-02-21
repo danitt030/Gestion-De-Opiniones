@@ -71,19 +71,19 @@ export const eliminarCategoria = async (req, res) => {
             success: true,
             message: "Categoria eliminada",
             categoria
-        });
+        })
     } catch (err) {
         res.status(500).json({
             success: false,
             message: "Error al eliminar la categoria",
             error: err.message
-        });
+        })
     }
-};
+}
 
 export const categoriaPorDefecto = async () => {
     try {
-        const categoriaPorDefecto = await Categoria.findOne({ nombre: "EVENTOS 2025" });
+        const categoriaPorDefecto = await Categoria.findOne({ nombre: "Libros" });
 
         if (!categoriaPorDefecto) {
             const catDefec = {
@@ -92,9 +92,10 @@ export const categoriaPorDefecto = async () => {
             };
             const categoriaDefect = await Categoria.create(catDefec);
             console.log("Categoria por defecto creada:", categoriaDefect);
-        } 
+        } else {
+            console.log("Categoria por defecto ya existe:", categoriaPorDefecto);
+        }
     } catch (err) {
         console.error("Error al crear la categoria por defecto:", err.message);
     }
-};
-
+}
