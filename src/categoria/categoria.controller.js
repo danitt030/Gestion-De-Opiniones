@@ -90,10 +90,7 @@ export const categoriaPorDefecto = async () => {
                 nombre: "Libros",
                 descripcion: "Libros historicos e importantes"
             };
-            const categoriaDefect = await Categoria.create(catDefec);
-            console.log("Categoria por defecto creada:", categoriaDefect);
-        } else {
-            console.log("Categoria por defecto ya existe:", categoriaPorDefecto);
+            await Categoria.create(catDefec);
         }
     } catch (err) {
         console.error("Error al crear la categoria por defecto:", err.message);
