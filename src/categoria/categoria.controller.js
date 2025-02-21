@@ -1,4 +1,5 @@
 import Categoria from "./categoria.model.js"
+import Publicacion from "../publicaciones/publicaciones.model.js"
 
 export const agregarCategoria = async (req, res) => {
     try {
@@ -65,21 +66,32 @@ export const actualizarCategoria = async (req, res) => {
 export const eliminarCategoria = async (req, res) => {
     try {
         const { uid } = req.params;
+
+        const categoriaPorDefecto = await Categoria.findOne({ nombre: "Libros" });
+        if (!categoriaPorDefecto) {
+            return res.status(500).json({
+                success: false,
+                message: "Categoría por defecto no encontrada"
+            });
+        }
+
+        await Publicacion.updateMany({ categoria: uid }, { categoria: categoriaPorDefecto._id });
+
         const categoria = await Categoria.findByIdAndDelete(uid);
 
         res.status(200).json({
             success: true,
-            message: "Categoria eliminada",
+            message: "Categoria eliminada y publicaciones actualizadas",
             categoria
-        })
+        });
     } catch (err) {
         res.status(500).json({
             success: false,
             message: "Error al eliminar la categoria",
             error: err.message
-        })
+        });
     }
-}
+};
 
 export const categoriaPorDefecto = async () => {
     try {
