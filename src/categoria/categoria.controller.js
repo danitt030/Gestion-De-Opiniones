@@ -71,15 +71,15 @@ export const eliminarCategoria = async (req, res) => {
             success: true,
             message: "Categoria eliminada",
             categoria
-        });
+        })
     } catch (err) {
         res.status(500).json({
             success: false,
             message: "Error al eliminar la categoria",
             error: err.message
-        });
+        })
     }
-};
+}
 
 export const categoriaPorDefecto = async () => {
     try {
