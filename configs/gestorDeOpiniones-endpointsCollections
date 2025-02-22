@@ -1,0 +1,677 @@
+{
+	"info": {
+		"_postman_id": "1dfb357e-944a-4c6e-b199-4731dda2087d",
+		"name": "GESTOR DE OPINIONES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37636976"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "RegistroUsuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Andreee",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Hernandez",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "anhernandez",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "aHernandez@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Cremas30**",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/Tuchez/Desktop/Patricio_estrella.jpg"
+								},
+								{
+									"key": "phone",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "USER_ROLE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestionDeOpiniones/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestionDeOpiniones",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"danitt030\",\r\n    \"password\": \"Cremas30*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestionDeOpiniones/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestionDeOpiniones",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cambiar contraseña",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2Y2Q3MmQzZTdiNDhiMTA4YTg2YmYiLCJpYXQiOjE3NDAwMzc4MTMsImV4cCI6MTc0MDA0MTQxM30.YwskzsPagjNHFssWwz6Pejc7EV8FkCqSjIw4OERwZbM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"Cremas30***\",\r\n    \"newPassword\": \"Cremas30**\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestionDeOpiniones/v1/User/updatePassword/67b77d902d712de1d60d717b",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestionDeOpiniones",
+								"v1",
+								"User",
+								"updatePassword",
+								"67b77d902d712de1d60d717b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I3N2Q5MDJkNzEyZGUxZDYwZDcxN2IiLCJpYXQiOjE3NDAwNzg1MTksImV4cCI6MTc0MDA4MjExOX0.7BHAq1R8ne6Ej7scKk5oso0Qy6BVfyzIYtDOx7adWrw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jose Vargas\",\r\n    \"surname\": \"TUY TUCHEZ\",\r\n    \"username\": \"arre.___u\",\r\n    \"email\": \"andre.arrecisvargas@gmail.com\",\r\n    \"phone\": \"87654321\",\r\n    \"profilePicture\": \"NULL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestionDeOpiniones/v1/User/updateUser/67b77d902d712de1d60d717b",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestionDeOpiniones",
+								"v1",
+								"User",
+								"updateUser",
+								"67b77d902d712de1d60d717b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categoria",
+			"item": [
+				{
+					"name": "Agregar Categoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2Yzk1NzE5MzQ4YzgzOTJmNTM4YTAiLCJpYXQiOjE3NDAxMDA0MjEsImV4cCI6MTc0MDEwNDAyMX0.S55K4bxf46dast1X3cowUPjFVAXxGINQ1ABXCWf3b2g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Tecnologia\",\r\n    \"descripcion\": \"Tecnologia de sistemas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestionDeOpiniones/v1/Categoria/agregarCategoria",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestionDeOpiniones",
+								"v1",
+								"Categoria",
+								"agregarCategoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2Yzk1NzE5MzQ4YzgzOTJmNTM4YTAiLCJpYXQiOjE3NDAxMDQ4MTgsImV4cCI6MTc0MDEwODQxOH0.sOnIa5mmTcDHuPyiP80b-5tPQscvKAI9tHc9u6pz2pk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestionDeOpiniones/v1/Categoria/getCategoria",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestionDeOpiniones",
+								"v1",
+								"Categoria",
+								"getCategoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Categoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2Yzk1NzE5MzQ4YzgzOTJmNTM4YTAiLCJpYXQiOjE3NDAxMDA0MjEsImV4cCI6MTc0MDEwNDAyMX0.S55K4bxf46dast1X3cowUPjFVAXxGINQ1ABXCWf3b2g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Deportes\",\r\n    \"descripcion\": \"Ven a observar la seccion de Deportes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestionDeOpiniones/v1/Categoria/actualizarCategoria/67b7d352f00b6679a49ed119",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestionDeOpiniones",
+								"v1",
+								"Categoria",
+								"actualizarCategoria",
+								"67b7d352f00b6679a49ed119"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar Categoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2Yzk1NzE5MzQ4YzgzOTJmNTM4YTAiLCJpYXQiOjE3NDAxNjQ3MTUsImV4cCI6MTc0MDE4MjcxNX0.4ojOWCpuf5nmipa3N02KMR9sAfj4Wwv6-9dG-vz9xqs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestionDeOpiniones/v1/Categoria/eliminarCategoria/67b7de00d41921711aab16d3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestionDeOpiniones",
+								"v1",
+								"Categoria",
+								"eliminarCategoria",
+								"67b7de00d41921711aab16d3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Publicaciones",
+			"item": [
+				{
+					"name": "Agregar publicaciones",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I3N2Q5MDJkNzEyZGUxZDYwZDcxN2IiLCJpYXQiOjE3NDAxNTA2NjQsImV4cCI6MTc0MDE2ODY2NH0.2zRfPVwql3BA0l6hVVfH3xUewq68P5hEcHz7LWQ2GV0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"Gano la beca\",\r\n    \"texto\": \"Gano la beca para estudiar ingenieria en sistemas\",\r\n    \"categoria\": \"67b7de00d41921711aab16d3\", \r\n    \"autor\": \"67b6c95719348c8392f538a0\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestionDeOpiniones/v1/Publicacion/agregarPublicacion",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestionDeOpiniones",
+								"v1",
+								"Publicacion",
+								"agregarPublicacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Publicaciones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestionDeOpiniones/v1/Publicacion/listarPublicacion",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestionDeOpiniones",
+								"v1",
+								"Publicacion",
+								"listarPublicacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar publicacion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2Y2Q3MmQzZTdiNDhiMTA4YTg2YmYiLCJpYXQiOjE3NDAxMjA5MjEsImV4cCI6MTc0MDEyNDUyMX0.VlvZrel0hPBc5-kYREBcWRQ_XN1SpvrwblPJvn6a4Qk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"Daniel Tuy mete el gol gana en kinal\",\r\n    \"texto\": \"Deportes\",\r\n    \"categoria\": \"67b7ec292e1889705ccc07d6\", \r\n    \"autor\": \"67b6cd72d3e7b48b108a86bf\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestionDeOpiniones/v1/Publicacion/editarPublicacion/67b812f7e36862a2ca19bf66",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestionDeOpiniones",
+								"v1",
+								"Publicacion",
+								"editarPublicacion",
+								"67b812f7e36862a2ca19bf66"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar publicacion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2Y2Q3MmQzZTdiNDhiMTA4YTg2YmYiLCJpYXQiOjE3NDAxNTA5OTksImV4cCI6MTc0MDE2ODk5OX0.ZmJlUTfjg2sPCPh-Ge15mTSEcAceusdqwKCDj9GWO8U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestionDeOpiniones/v1/Publicacion/eliminarPublicacion/67b898161edbfa6e2520ba47",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestionDeOpiniones",
+								"v1",
+								"Publicacion",
+								"eliminarPublicacion",
+								"67b898161edbfa6e2520ba47"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comentario",
+			"item": [
+				{
+					"name": "agregar comentario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2Y2Q3MmQzZTdiNDhiMTA4YTg2YmYiLCJpYXQiOjE3NDAxNTgzNDIsImV4cCI6MTc0MDE3NjM0Mn0.IiL7IZymm5eO7G4xZkVBsSUpS8ISGTh_a7HX8teSOB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"67b6cd72d3e7b48b108a86bf\",\r\n    \"texto\": \"Comentario prueba 1\",\r\n    \"publicacion\": \"67b898151edbfa6e2520ba44\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestionDeOpiniones/v1/Comentario/agregarComentario",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestionDeOpiniones",
+								"v1",
+								"Comentario",
+								"agregarComentario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Comentario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2Y2Q3MmQzZTdiNDhiMTA4YTg2YmYiLCJpYXQiOjE3NDAxNTgzNDIsImV4cCI6MTc0MDE3NjM0Mn0.IiL7IZymm5eO7G4xZkVBsSUpS8ISGTh_a7HX8teSOB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"67b6cd72d3e7b48b108a86bf\",\r\n    \"texto\": \"COMENTARIO 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestionDeOpiniones/v1/Comentario/editarComentario/67b8f2d8bbd45d0faaaaad79",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestionDeOpiniones",
+								"v1",
+								"Comentario",
+								"editarComentario",
+								"67b8f2d8bbd45d0faaaaad79"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar comentario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2Y2Q3MmQzZTdiNDhiMTA4YTg2YmYiLCJpYXQiOjE3NDAxNTgzNDIsImV4cCI6MTc0MDE3NjM0Mn0.IiL7IZymm5eO7G4xZkVBsSUpS8ISGTh_a7HX8teSOB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"67b6cd72d3e7b48b108a86bf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/gestionDeOpiniones/v1/Comentario/eliminarComentario/67b8f2d8bbd45d0faaaaad79",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"gestionDeOpiniones",
+								"v1",
+								"Comentario",
+								"eliminarComentario",
+								"67b8f2d8bbd45d0faaaaad79"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
